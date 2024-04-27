@@ -42,7 +42,9 @@ function SearchProfile() {
                 `https://api.github.com/users/${value}`,
                 {
                   headers: {
-                    "Authorization": `Bearer ${process.env.ACCESS_TOKEN}`
+                    "Accept": "application/vnd.github+json",
+                    "Authorization": `Bearer ${process.env.REACT_APP_ACCESS_TOKEN}`,
+                    "X-GitHub-Api-Version": "2022-11-28"
                   },
                 }
               );
