@@ -39,7 +39,12 @@ function SearchProfile() {
             event.preventDefault();
             try {
               const response = await fetch(
-                `https://api.github.com/users/${value}`
+                `https://api.github.com/users/${value}`,
+                {
+                  headers: {
+                    "Authorization": `Bearer ${process.env.ACCESS_TOKEN}`
+                  },
+                }
               );
               const data = await response.json();
 
